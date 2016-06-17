@@ -2,6 +2,7 @@
   derived_table:
     sql_trigger_value: select current_date
     indexes: [cal_date]
+    distribution_style: ALL  
     sql: |
             SELECT 
               DATEADD('days',   
@@ -48,6 +49,7 @@
                 )::int
                 , '2012-11-01'::date
                 ) <= current_date
+                
 
   fields:
   - dimension_group: cal_date
