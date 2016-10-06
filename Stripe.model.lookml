@@ -28,7 +28,11 @@
   joins:
     - join: balance_transactions
       sql_on: ${transfers.balance_transaction_id} = ${balance_transactions.id}
-      relationship: one_to_one
+      relationship: one_to_many
+    
+    - join: charges
+      sql_on: ${charges.balance_transaction_id} = ${balance_transactions.id}
+      relationship: one_to_many
 
 # - explore: customers
 #   from: calendar
