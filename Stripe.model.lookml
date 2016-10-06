@@ -24,7 +24,9 @@
       sql_on: ${application_fees.charge_id} = ${charges.id}
       relationship: one_to_one
       
-    - join: transfers
+- explore: transfers
+  joins:
+    - join: balance_transactions
       sql_on: ${transfers.balance_transaction_id} = ${balance_transactions.id}
       relationship: one_to_one
 
