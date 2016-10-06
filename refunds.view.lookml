@@ -11,9 +11,9 @@
     type: number
     sql: ${TABLE}.amount
 
-  - dimension: balance_transaction
+  - dimension: balance_transaction_id
     type: string
-    sql: ${TABLE}.balance_transaction
+    sql: ${TABLE}.balance_transaction_id
 
   - dimension: charge_id
     type: string

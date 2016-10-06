@@ -17,6 +17,14 @@
     type: number
     sql: ${TABLE}.amount_refunded*1.0/100
     value_format: '$#,##0.00'
+    
+  - dimension: application_fee
+    type: string
+    sql: ${TABLE}.application_fee
+    
+  - dimension: balance_transaction_id
+    type: string
+    sql: ${TABLE}.balance_transaction_id
 
   - dimension: captured
     type: yesno
@@ -24,7 +32,7 @@
 
   - dimension_group: created
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [time, date, week, month, quarter]
     sql: ${TABLE}.created
 
   - dimension: currency
@@ -45,8 +53,8 @@
     sql: ${TABLE}.failure_code
 
   - dimension: invoice_id
+    hidden: true
     type: string
-    # hidden: true
     sql: ${TABLE}.invoice_id
 
   - dimension: paid
