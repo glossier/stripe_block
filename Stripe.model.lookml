@@ -18,21 +18,27 @@
       
     - join: balance_transactions
       sql_on: ${balance_transactions.id} = ${charges.balance_transaction_id}
-      relationship: one_to_one
+      relationship: one_to_many
       
     - join: application_fees
       sql_on: ${application_fees.charge_id} = ${charges.id}
       relationship: one_to_one
       
-- explore: transfers
-  joins:
-    - join: balance_transactions
-      sql_on: ${transfers.balance_transaction_id} = ${balance_transactions.id}
+    - join: transfers
+      sql_on: ${charges.id} = ${transfers.source_transaction} 
       relationship: one_to_many
+      
     
-    - join: charges
-      sql_on: ${charges.balance_transaction_id} = ${balance_transactions.id}
-      relationship: one_to_many
+      
+# - explore: transfers
+#   joins:
+#     - join: balance_transactions
+#       sql_on: ${transfers.balance_transaction_id} = 
+#       relationship: one_to_many
+#     
+#     - join: charges
+#       sql_on: ${charges.balance_transaction_id} = ${balance_transactions.id}
+#       relationship: one_to_many
 
 # - explore: customers
 #   from: calendar
