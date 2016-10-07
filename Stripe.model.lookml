@@ -18,7 +18,7 @@
       
     - join: balance_transactions
       sql_on: ${balance_transactions.id} = ${charges.balance_transaction_id}
-      relationship: one_to_one
+      relationship: one_to_many
       
     - join: application_fees
       sql_on: ${application_fees.charge_id} = ${charges.id}
