@@ -25,6 +25,10 @@
   - dimension: balance_transaction_id
     type: string
     sql: ${TABLE}.balance_transaction_id
+    
+  - dimension: description
+    type: string
+    sql: ${TABLE}.description
 
   - dimension: captured
     type: yesno
