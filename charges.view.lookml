@@ -110,6 +110,7 @@
     drill_fields: detail*
       
   - measure: total_net_amount
+    description: 'Gross-Refunds-Failed Charges'
     type: number
     sql: ${total_gross_amount} - ${total_refunds} - ${total_failed_charges}
     value_format: '$#,##0.00'
@@ -130,10 +131,10 @@
     sql: ${total_net_amount}
     value_format: '$#,##0.00'
 
-  - measure: avg_charge_amount
-    type: avg
-    sql: ${total_gross_amount} - ${total_refunds} - ${total_failed_charges}
-    value_format: '$#,##0.00'
+#   - measure: avg_charge_amount
+#     type: avg
+#     sql: (${total_gross_amount} - ${total_refunds} - ${total_failed_charges})
+#     value_format: '$#,##0.00'
 
   - measure: charge_count
     type: count
